@@ -1,0 +1,26 @@
+{% extends "user/sign_layout.html" %}
+
+{% block title %}{{ title }}{% endblock  %}
+
+{% block content %}
+
+<div class="circle"></div>
+<div class="register-form-container">
+    <h1 class="form-title">{{ title }}</h1>
+    <form method="post">
+        <div class="form-fields">
+            {% csrf_token %}
+
+            <div class="form-error">{{ form.non_field_errors }}</div>
+            
+            {% for f in form %}
+                <div class="form-field">{{ f }}</div>
+                <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
+        </div>
+        <div class="form-buttons">
+            <input type="submit" class="button button-sign-up" value="Войти">
+        </div>
+    </form>
+</div>
+{% endblock content %}

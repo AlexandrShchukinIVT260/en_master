@@ -1,0 +1,21 @@
+{% extends "main/layout.html" %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div class="features">
+    <div class="register-user-container">
+        <h1 class="user-title">Удалить пользователя {{ request.user.username }}?</h1>
+
+        <div class="user-buttons">
+            <form method="post">
+                {% csrf_token %}
+                <input type="submit" class="button button-sign-up" value="Удалить">
+                <a href="{% url 'user_home' user.profile.slug %}" class="button button-sign-in">Назад</a>
+            </form>
+        </div>
+        
+    </div>
+</div>
+{% endblock content %}

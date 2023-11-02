@@ -1,0 +1,56 @@
+{% extends "main/layout.html" %}
+
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div class="features">
+    <div class="register-user-container">
+        <h1 class="user-title">
+            Пользователь {{ request.user.username }}
+        </h1>
+        <div class="user-avatar">
+            {% if user.profile.avatar %}
+            <img src="{{ user.profile.avatar.url }}" class="img-fluid rounded-0 avatar" alt="{{ profile }}">
+            {% else %}
+            <img src="{% static 'user/img/default.png' %}" class="img-fluid rounded-0 avatar accordion`" alt="{{ profile }}">
+            {% endif %}
+        </div>
+        <div class="user-fields">
+            <div class="user-field">
+                Логин: {{ profile.user.username }}
+            </div>
+            <div class="user-field">
+                Почта: {{ profile.user.email }}
+            </div>
+            {% if profile.user.get_full_name %}
+                <div class="user-field">
+                    Имя и фамилия: {{ profile.user.get_full_name }}
+                </div>
+            {% endif %}
+            <div class="user-field">
+                Заходил: {{ profile.user.last_login }}
+            </div>
+            {% if profile.user.get_full_name %}
+                <div class="user-field">
+                    Дата рождения: {{ profile.birth_date }}
+                </div>
+            {% endif %}
+            {% comment %} <ul>
+                <li>Логин: {{ profile.user.username }}</li>
+                <li>Почта: {{ profile.user.email }}</li>
+                {% if profile.user.get_full_name %} <li>Имя и фамилия: {{ profile.user.get_full_name }}</li> {% endif %}
+                <li>Заходил: {{ profile.user.last_login }}</li>
+                {% if profile.birth_date %} <li>Дата рождения: {{ profile.birth_date }}</li> {% endif %}
+            </ul> {% endcomment %}
+        </div>
+        <div class="user-buttons">
+            <a href="{% url 'sign_out' %}" class="button button-sign-up">Выйти</a>
+            <a href="{% url 'update' user.profile.slug %}" class="button button-sign-in">Редактиоровать</a>
+            <a href="{% url 'delete' user.profile.slug %}" class="button button-sign-in">Удалить</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

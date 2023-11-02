@@ -1,0 +1,111 @@
+input {
+    height: 45px;
+    width: 100%;
+    color: #385983;
+    font-size: 14px;
+    line-height: 16px;
+    border: 2px solid #E9F2FF;
+    border-radius: 5px;
+    padding-left: 25px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #C1D9FD;
+}
+
+.register-user-container {
+    position: relative;
+    max-width: 520px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 6px 50px rgba(217, 229, 255, 0.7);
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+}
+
+.user-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.avatar {
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.user-title {
+    color: #30507D;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.user-field {
+    margin-bottom: 13px;
+}
+
+.user-buttons {
+    padding-top: 10px;
+    color: #fff;
+}
+
+.button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    height: 45px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+}
+
+.button-sign-in {
+    text-decoration: none;
+    color: #C6CFDC;
+    background: #edf1fa;
+    margin-top: 10px;
+}
+
+.button-sign-in:hover {
+    background: #E2E6F0;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.button.button-sign-in {
+    text-decoration: none;
+}
+
+.button-sign-up {
+    text-decoration: none;
+    color: #fff;
+    /* background: #247FFF; */
+    background: #487ac2;
+}
+
+.button-sign-up:hover {
+    /* background-color: #0D6CF2; */
+    background: #37619b;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.button.button-sign-up {
+    text-decoration: none;
+}
