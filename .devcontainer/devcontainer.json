@@ -1,0 +1,16 @@
+{
+    "name": "en_master",
+    "build": { "dockerfile": "../Dockerfile" },
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-azuretools.vscode-docker",
+                "batisteo.vscode-django"
+            ]
+        }
+    },
+
+    "remoteUser": "user"
+}
