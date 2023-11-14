@@ -1,3 +1,5 @@
 from django.contrib import admin
+from user.models import WordTranslate
 
-# Register your models here.
+
+admin.site.register(WordTranslate)

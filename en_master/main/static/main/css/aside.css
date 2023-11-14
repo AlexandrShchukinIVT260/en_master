@@ -1,3 +1,4 @@
+
 aside {
     float: left;
     background: #edeff3f6;
@@ -101,7 +102,7 @@ aside {
 }
 
 .section .container ul li:hover, .section .container ul a:hover {
-    color: #336dbe;
+    color: #1e5097;
     text-decoration: none;
     transform: scale(1.05);
 }

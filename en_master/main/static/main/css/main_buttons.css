@@ -1,0 +1,53 @@
+.button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    display: block;
+    height: 45px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+}
+
+.button-sign-in {
+    text-decoration: none;
+    color: #C6CFDC;
+    background: #edf1fa;
+    margin-bottom: 13px;
+    /* margin-top: 10px; */
+}
+
+.button-sign-in:hover {
+    background: #E2E6F0;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.button.button-sign-in {
+    text-decoration: none;
+}
+
+.button-sign-up {
+    text-decoration: none;
+    color: #fff;
+    /* background: #247FFF; */
+    background: #487ac2;
+    margin-bottom: 13px;
+}
+
+.button-sign-up:hover {
+    /* background-color: #0D6CF2; */
+    background: #37619b;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.button.button-sign-up {
+    text-decoration: none;
+}

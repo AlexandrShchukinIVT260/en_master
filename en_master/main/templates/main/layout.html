@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{% static 'main/css/aside.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/utilities.css' %}">
     <link rel="stylesheet" href="{% static 'main/css/main_user_home.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main_word_home.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/main_buttons.css' %}">
 </head>
 <body>
     <aside>
@@ -36,9 +38,9 @@
                     {% else %}
                         <a class="flex" href="{% url 'sign_up' %}"><li><i class="fa-solid fa-address-card"></i> Пользователь</li></a>
                     {% endif %}
-                    <a href=""><li><i class="fa-solid fa-newspaper"></i> Словарь</li></a>
-                    <a href=""><li><i class="fa-solid fa-paper-plane"></i> WordGame</li></a>
-                    <a href=""><li><i class="fa-solid fa-paper-plane"></i> ImgGame</li></a>
+                    <a href="{% url 'dict_home' %}"><li><i class="fa-solid fa-spell-check"></i> Словарь</li></a>
+                    <a href=""><li><i class="fa-solid fa-file-word"></i> WordGame</li></a>
+                    <a href=""><li><i class="fa-solid fa-image"></i> ImgGame</li></a>
                     <a href=""><li><button class="btn-add"><i class="fa-solid fa-plus"></i> Добавить</button></i></li></a>
                 </ul>
             </div>

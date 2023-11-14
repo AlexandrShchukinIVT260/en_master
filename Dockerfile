@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip
 
 RUN pip install django pytils Pillow
+RUN pip install pytz tzdata --upgrade
 
 # =====
 # The new stuff is below
@@ -18,6 +19,6 @@ RUN pip install django pytils Pillow
 # Install our Python dependencies
 # RUN pip install Requests Pygments
 
-ADD . /workspaces/en_master
+ADD . /en_master
 
-WORKDIR /workspaces/en_master
+WORKDIR /en_master

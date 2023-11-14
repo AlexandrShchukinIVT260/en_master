@@ -10,7 +10,7 @@ urlpatterns = [
     path('user/', include('user.urls')),
     # path('sign_in', include('user.urls')),
     # path('img_game', include('imggame.urls')),
-    # path('dictionary', include('dictionary.urls')),
+    path('dictionary/', include('dictionary.urls')),
     # path('word_game', include('word_game.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

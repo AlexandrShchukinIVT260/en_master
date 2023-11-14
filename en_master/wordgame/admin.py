@@ -1,3 +1,9 @@
 from django.contrib import admin
+from user.models import WordGame
 
-# Register your models here.
+
+admin.site.register(WordGame)
+
+
+
+

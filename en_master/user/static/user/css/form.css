@@ -126,7 +126,7 @@ main {
     font-size: 14px;
     display: block;
     height: 45px;
-    background: #247FFF;
+    background: #487ac2;
     border-radius: 5px;
     color: #fff;
     text-transform: uppercase;
@@ -135,7 +135,7 @@ main {
     cursor: pointer;
 }
 .button:hover {
-    background-color: #0D6CF2;
+    background-color: #1e5097;
 }
 .button-sign-in {
     text-decoration: none;

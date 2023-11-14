@@ -81,21 +81,32 @@ class WordTranslate(models.Model):
     lead_question = models.OneToOneField('WordGame', on_delete=models.SET_NULL, null=True, blank=True)
     
     def __str__(self):
-        return self.name
+        return self.word
     
-    # def get_absolute_url(self):
-    #     return f'/news/{self.id}'
+    def get_absolute_url(self):
+        return f'/dictionary/{self.id}'
     
     class Meta:
         verbose_name = 'Слово с переводом'
         verbose_name_plural = 'Слова с переводом'
         
+    def get_absolute_url(self):
+        """
+        Ссылка на профиль
+        """
+        return reverse('dictionary')
+        
         
 class ImgGame(models.Model):
-    img = models.CharField('Картинка', max_length=50, default='')
+    img = models.ImageField(
+        verbose_name='Картинка для ImgGame',
+        upload_to='user/images/ImgGame/%Y/%m/%d/', 
+        # default='user/images/avatars/default.png',
+        blank=True,  
+        validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'jpeg'))])
     
     def __str__(self):
-        return self.img
+        return "image"
     
     # def get_absolute_url(self):
     #     return f'/news/{self.id}'
