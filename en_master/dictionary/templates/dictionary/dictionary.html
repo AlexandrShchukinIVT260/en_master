@@ -10,49 +10,26 @@
     <h1 class="word-title">
         Словарь
     </h1>
-    <div class="register-word-container">
-        <!-- <h1 class="word-title">
-            Словарь
-        </h1> -->
-        <!-- <div class="user-avatar">
-            {% if user.profile.avatar %}
-            <img src="{{ user.profile.avatar.url }}" class="img-fluid rounded-0 avatar" alt="{{ profile }}">
-            {% else %}
-            <img src="{% static 'user/img/default.png' %}" class="img-fluid rounded-0 avatar accordion`" alt="{{ profile }}">
-            {% endif %}
-        </div> -->
-        <div class="word-fields">
-            <div class="word-field">
-                Логин: {{ profile.user.username }}
-            </div>
-            <div class="word-field">
-                Почта: {{ profile.user.email }}
-            </div>
-            {% if profile.user.get_full_name %}
-                <div class="word-field">
-                    Имя и фамилия: {{ profile.user.get_full_name }}
+    {% if words %}
+        {% for word in words %}
+            <div class="register-word-container">
+                <div class="word-fields">
+                    <div class="word-field">
+                        Слово: {{ word.word }}
+                    </div>
+                    <div class="word-field">
+                        Перевод: {{ word.translate }}
+                    </div>
                 </div>
-            {% endif %}
-            <div class="word-field">
-                Заходил: {{ profile.user.last_login }}
-            </div>
-            {% if profile.user.get_full_name %}
-                <div class="word-field">
-                    Дата рождения: {{ profile.birth_date }}
+                <div class="word-buttons">
+                    <a href="{% url 'word_detail' word.id %}" class="button button-viewing">Просмотр</a>
                 </div>
-            {% endif %}
-            {% comment %} <ul>
-                <li>Логин: {{ profile.user.username }}</li>
-                <li>Почта: {{ profile.user.email }}</li>
-                {% if profile.user.get_full_name %} <li>Имя и фамилия: {{ profile.user.get_full_name }}</li> {% endif %}
-                <li>Заходил: {{ profile.user.last_login }}</li>
-                {% if profile.birth_date %} <li>Дата рождения: {{ profile.birth_date }}</li> {% endif %}
-            </ul> {% endcomment %}
-        </div>
-        <div class="word-buttons">
-            <a href="{% url 'update' user.profile.slug %}" class="button button-sign-in">Редактиоровать</a>
-            <a href="{% url 'delete' user.profile.slug %}" class="button button-sign-in">Удалить</a>
-        </div>
-    </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h1 class="word-title">
+            Нет слов в словаре...
+        </h1>
+    {% endif %}
 </div>
 {% endblock content %}

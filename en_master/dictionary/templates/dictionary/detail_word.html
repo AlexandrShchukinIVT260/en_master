@@ -1,0 +1,36 @@
+{% extends "main/layout.html" %}
+
+{% load static %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div class="features">
+    <div class="register-user-container">
+        <h1 class="word-title">
+            {{ detail.word }}
+        </h1>
+        <div class="user-avatar">
+            {% comment %}  user.profile.img {% endcomment %}
+            {% if user.detail.img %}
+                <img src="{{ user.detail.img.url }}" class="img-fluid rounded-0 avatar" alt="{{ detail }}">
+            {% else %}
+                <img src="{% static 'user/img/default_word.png' %}" class="img-fluid rounded-0 avatar accordion`" alt="{{ detail }}">
+            {% endif %}
+        </div>
+        <div class="user-fields">
+            <div class="user-field">
+                Перевод: {{ detail.translate }}
+            </div>
+            <div class="user-field">
+                Наводящий вопрос: {{ detail.lead_question }}
+            </div>
+        </div>
+        <div class="user-buttons">
+            <a href="{% url 'word_update' detail.id %}" class="button button-sign-in">Редактиоровать</a>
+            <a href="{% url 'word_delete' detail.id %}" class="button button-sign-in">Удалить</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

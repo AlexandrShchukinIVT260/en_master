@@ -51,3 +51,19 @@ a.button.button-sign-in {
 a.button.button-sign-up {
     text-decoration: none;
 }
+
+.button-viewing {
+    text-decoration: none;
+    color: #C6CFDC;
+    background: #edf1fa;
+}
+
+.button-viewing:hover {
+    background: #E2E6F0;
+    color: #fff;
+    text-decoration: none;
+}
+
+a.button.button-viewing {
+    text-decoration: none;
+}

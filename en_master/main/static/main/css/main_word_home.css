@@ -25,6 +25,10 @@ input:focus {
     padding-right: 30px;
     padding-top: 38px;
     padding-bottom: 38px;
+    margin-bottom: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* .word-avatar {
@@ -50,16 +54,29 @@ input:focus {
 }
 
 .word-fields {
-    float: left;
+    flex-direction: column;
+    display: flex;
+
     width: 50%;
+
+    justify-content: center;
 }
 
 .word-field {
-    margin-bottom: 13px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .word-buttons {
-    float: right;
-    width: 50%;
+    flex-direction: column;
+    display: flex;
+
+    width: 30%;
     color: #fff;
+
+    justify-content: center;
 }
