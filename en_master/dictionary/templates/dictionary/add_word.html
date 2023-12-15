@@ -1,0 +1,28 @@
+{% extends "main/layout.html" %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block content %}
+
+<div class="features">
+    <div class="register-user-container">
+        <h1 class="user-title">{{ title }}</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            
+            <div class="user-fields">
+                {% csrf_token %}
+
+                {% for f in form %}
+                    <div class="user-field">{{ f }}</div>
+                {% endfor %}
+
+            </div>
+            <div class="user-buttons">
+                <input type="submit" class="button button-sign-up" value="Добавить">
+            </div>
+        </form>
+        
+    </div>
+</div>
+{% endblock content %}

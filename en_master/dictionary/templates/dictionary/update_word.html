@@ -5,24 +5,32 @@
 {% block content %}
 
 <div class="features">
-    <div class="register-user-container">
+    <div class="register-word-update-container">
         <h1 class="user-title">{{ title }}</h1>
 
         <form method="post" enctype="multipart/form-data">
             
-            <div class="user-fields">
+            <div class="word-update-fields">
                 {% csrf_token %}
 
-                <div class="form-error">{{ form.non_field_errors }}</div>
+                {% comment %} {% for u_f in user_form %}
+                    <div class="user-field-update">{{ u_f }}</div>
+                    <div class="form-error">{{ f.errors }}</div>
+                {% endfor %} {% endcomment %}
 
-                {% for u_f in user_form %}
-                    <div class="user-field">{{ u_f }}</div>
-                    <div class="form-error">{{ f.errors }}</div>
+                {% for w_f in word_translate_form %}
+                    <div class="word-update-field">{{ w_f }}</div>
                 {% endfor %}
+
                 {% for f in form %}
-                    <div class="user-field">{{ f }}</div>
-                    <div class="form-error">{{ f.errors }}</div>
+                    <div class="word-update-field">{{ f }}</div>
                 {% endfor %}
+
+                {% comment %} <div class="word-update-field">{{ word_game_form.lead_question }}</div>
+                <div class="word-update-field">{{ img_game_form.img }}</div> {% endcomment %}
+
+                {% comment %} <div class="word-update-field">{{ update.lead_question }}</div>
+                <div class="word-update-field">{{ update.img }}</div> {% endcomment %}
             </div>
             <div class="user-buttons">
                 <input type="submit" class="button button-sign-up" value="Сохранить">

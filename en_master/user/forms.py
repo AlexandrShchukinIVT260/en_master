@@ -127,7 +127,7 @@ class ProfileUpdateForm(forms.ModelForm):
     
     class Meta:
         model = Profile
-        fields = ('slug', 'birth_date', 'avatar')
+        fields = ('birth_date', 'avatar')
 
     def __init__(self, *args, **kwargs):
         """

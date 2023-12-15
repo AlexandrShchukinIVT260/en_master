@@ -77,27 +77,62 @@ class WordTranslate(models.Model):
     word = models.CharField('Слово', max_length=50, default='')
     translate = models.CharField('Перевод', max_length=50, default='')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    img = models.OneToOneField('ImgGame', on_delete=models.SET_NULL, null=True, blank=True)
-    lead_question = models.OneToOneField('WordGame', on_delete=models.SET_NULL, null=True, blank=True)
+    # img = models.OneToOneField('ImgGame', on_delete=models.SET_NULL, null=True, blank=True)
+    # lead_question = models.OneToOneField('WordGame', on_delete=models.SET_NULL, null=True, blank=True)
+    games = models.OneToOneField('Games', on_delete=models.SET_NULL, null=True, blank=True)
+    
     
     def __str__(self):
         return self.word
-    
-    def get_absolute_url(self):
-        return f'/dictionary/{self.id}'
     
     class Meta:
         verbose_name = 'Слово с переводом'
         verbose_name_plural = 'Слова с переводом'
         
+    # def get_absolute_url(self):
+    #     """
+    #     Ссылка на профиль
+    #     """
+    #     return reverse('dictionary')
     def get_absolute_url(self):
-        """
-        Ссылка на профиль
-        """
-        return reverse('dictionary')
+        return f'/dictionary/{self.id}'
         
         
-class ImgGame(models.Model):
+# class ImgGame(models.Model):
+#     img = models.ImageField(
+#         verbose_name='Картинка для ImgGame',
+#         upload_to='user/images/ImgGame/%Y/%m/%d/', 
+#         # default='user/images/avatars/default.png',
+#         blank=True,  
+#         validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'jpeg'))])
+    
+#     def __str__(self):
+#         return "image"
+    
+#     # def get_absolute_url(self):
+#     #     return f'/news/{self.id}'
+    
+#     class Meta:
+#         verbose_name = 'Картинка'
+#         verbose_name_plural = 'Картинки'
+        
+        
+# class WordGame(models.Model):
+#     lead_question = models.CharField('Наводящий вопрос', max_length=250, default='')
+    
+#     def __str__(self):
+#         return self.lead_question
+    
+#     # def get_absolute_url(self):
+#     #     return f'/news/{self.id}'
+    
+#     class Meta:
+#         verbose_name = 'Вопрос'
+#         verbose_name_plural = 'Вопросы'
+        
+        
+class Games(models.Model):
+    lead_question = models.CharField('Наводящий вопрос', max_length=250, default='')
     img = models.ImageField(
         verbose_name='Картинка для ImgGame',
         upload_to='user/images/ImgGame/%Y/%m/%d/', 
@@ -106,28 +141,12 @@ class ImgGame(models.Model):
         validators=[FileExtensionValidator(allowed_extensions=('png', 'jpg', 'jpeg'))])
     
     def __str__(self):
-        return "image"
-    
-    # def get_absolute_url(self):
-    #     return f'/news/{self.id}'
-    
-    class Meta:
-        verbose_name = 'Картинка'
-        verbose_name_plural = 'Картинки'
-        
-        
-class WordGame(models.Model):
-    lead_question = models.CharField('Наводящий вопрос', max_length=250, default='')
-    
-    def __str__(self):
         return self.lead_question
     
-    # def get_absolute_url(self):
-    #     return f'/news/{self.id}'
     
     class Meta:
-        verbose_name = 'Вопрос'
-        verbose_name_plural = 'Вопросы'
+        verbose_name = 'Игра'
+        verbose_name_plural = 'Игры'
         
         
 @receiver(post_save, sender=User)
